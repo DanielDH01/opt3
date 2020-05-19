@@ -5,12 +5,12 @@ public class Lijsten {
     private static ArrayList<Boek> boekenLijst;
     private static ArrayList<Klant> klantLijst;
 
-    private Lijsten(){
+    private Lijsten() {
 
     }
 
     public Lijsten getINSTANCE() {
-        if(INSTANCE == null){
+        if (INSTANCE == null) {
             INSTANCE = new Lijsten();
         }
         return INSTANCE;

@@ -1,23 +1,25 @@
+import javafx.scene.Parent;
+
 import java.util.ArrayList;
 
-public class Klant {
+public class Klant extends Persoon {
     private Integer uniqueID;
-    private String voorNaam;
-    private String achterNaam;
     private Double boeteAantal;
-    private ArrayList<Boek> boekenInBezit;
 
     private Integer makeUniqueID = 0;
 
-    public Klant(String voorNaam, String achterNaam, Double boeteAantal) {
-        this.voorNaam = voorNaam;
-        this.achterNaam = achterNaam;
+    public Klant(String voorNaam, String achterNaam, String postCode, Double geld, Double boeteAantal) {
+        super(voorNaam, achterNaam, postCode, geld);
         this.boeteAantal = boeteAantal;
-        boekenInBezit = new ArrayList<>();
         uniqueID = makeUniqueID();
     }
 
-    public Integer makeUniqueID(){
+    public Klant(String voorNaam, String achterNaam, String postCode, Double geld, Double boeteAantal, ArrayList<Boek> boekenInBezit) {
+        super(voorNaam, achterNaam, postCode, geld, boekenInBezit);
+        this.boeteAantal = boeteAantal;
+    }
+
+    public Integer makeUniqueID() {
         makeUniqueID++;
         return makeUniqueID;
     }
@@ -30,22 +32,6 @@ public class Klant {
         this.uniqueID = uniqueID;
     }
 
-    public String getVoorNaam() {
-        return voorNaam;
-    }
-
-    public void setVoorNaam(String voorNaam) {
-        this.voorNaam = voorNaam;
-    }
-
-    public String getAchterNaam() {
-        return achterNaam;
-    }
-
-    public void setAchterNaam(String achterNaam) {
-        this.achterNaam = achterNaam;
-    }
-
     public Double getBoeteAantal() {
         return boeteAantal;
     }
@@ -54,11 +40,4 @@ public class Klant {
         this.boeteAantal = boeteAantal;
     }
 
-    public ArrayList<Boek> getBoekenInBezit() {
-        return boekenInBezit;
-    }
-
-    public void setBoekenInBezit(ArrayList<Boek> boekenInBezit) {
-        this.boekenInBezit = boekenInBezit;
-    }
 }
