@@ -1,5 +1,3 @@
-import javafx.scene.Parent;
-
 import java.util.ArrayList;
 
 public class Klant extends Persoon {
@@ -12,11 +10,13 @@ public class Klant extends Persoon {
         super(voorNaam, achterNaam, postCode, geld);
         this.boeteAantal = boeteAantal;
         uniqueID = makeUniqueID();
+        Lijsten.getKlantLijst().add(this);
     }
 
     public Klant(String voorNaam, String achterNaam, String postCode, Double geld, Double boeteAantal, ArrayList<Boek> boekenInBezit) {
         super(voorNaam, achterNaam, postCode, geld, boekenInBezit);
         this.boeteAantal = boeteAantal;
+        Lijsten.getKlantLijst().add(this);
     }
 
     public Integer makeUniqueID() {
@@ -40,4 +40,11 @@ public class Klant extends Persoon {
         this.boeteAantal = boeteAantal;
     }
 
+    @Override
+    public String toString() {
+        return "KlantID: '" + uniqueID +
+                "', Naam: '" + getVoorNaam() +
+                " " + getAchterNaam() +
+                "' BoeteBedrag: '"+ boeteAantal + "'";
+    }
 }

@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Boek {
@@ -6,17 +7,18 @@ public class Boek {
     private Integer paginas;
     private String auteur;
     private String categorie;
-    private Date uitgeleendDatum;
+    private LocalDate uitgeleendDatum;
+    private int uitgeleendAan;
 
     private static Integer makeUniqueID = 0;
 
-    public Boek(String titel, Integer paginas, String auteur, String categorie, Date uitgeleendDatum) {
+    public Boek(String titel, Integer paginas, String auteur, String categorie) {
         this.titel = titel;
         this.paginas = paginas;
         this.auteur = auteur;
         this.categorie = categorie;
-        this.uitgeleendDatum = uitgeleendDatum;
         this.uniqueID = makeUniqueID();
+        Lijsten.getBoekenLijst().add(this);
     }
 
     private Integer makeUniqueID() {
@@ -64,12 +66,28 @@ public class Boek {
         this.categorie = categorie;
     }
 
-    public Date getUitgeleendDatum() {
+    public LocalDate getUitgeleendDatum() {
         return uitgeleendDatum;
     }
 
-    public void setUitgeleendDatum(Date uitgeleendDatum) {
+    public void setUitgeleendDatum(LocalDate uitgeleendDatum) {
         this.uitgeleendDatum = uitgeleendDatum;
     }
 
+    public int getUitgeleendAan() {
+        return uitgeleendAan;
+    }
+
+    public void setUitgeleendAan(int uitgeleendAan) {
+        this.uitgeleendAan = uitgeleendAan;
+    }
+
+    @Override
+    public String toString() {
+        return  "titel: '" + titel +
+                "' paginas: '" + paginas +
+                "' auteur: '" + auteur +
+                "' categorie: '" + categorie +
+                "' uitgeleendAan: '" + uitgeleendAan + "'";
+    }
 }
