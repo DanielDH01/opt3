@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Boek {
     private Integer uniqueID;
@@ -9,16 +8,19 @@ public class Boek {
     private String categorie;
     private LocalDate uitgeleendDatum;
     private int uitgeleendAan;
+    private Bibliotheek bieb;
+
 
     private static Integer makeUniqueID = 0;
 
-    public Boek(String titel, Integer paginas, String auteur, String categorie) {
+    public Boek(int id, String titel, Integer paginas, String auteur, String categorie) {
         this.titel = titel;
         this.paginas = paginas;
         this.auteur = auteur;
         this.categorie = categorie;
         this.uniqueID = makeUniqueID();
-        Lijsten.getBoekenLijst().add(this);
+        bieb = Lijsten.getBiebLijst().get(id-1);
+        bieb.getBoekLijst().add(this);
     }
 
     private Integer makeUniqueID() {
@@ -27,7 +29,7 @@ public class Boek {
     }
 
     public Integer getUniqueID() {
-        return uniqueID;
+        return this.uniqueID;
     }
 
     public void setUniqueID(Integer uniqueID) {
