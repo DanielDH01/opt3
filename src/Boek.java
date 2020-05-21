@@ -23,7 +23,7 @@ public class Boek {
         bieb.getBoekLijst().add(this);
     }
 
-    private Integer makeUniqueID() {
+    public Integer makeUniqueID() {
         makeUniqueID++;
         return makeUniqueID;
     }
