@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Persoon{
+    private Integer uniqueIDpersoon;
     private String voorNaam;
     private String achterNaam;
     private String postCode;
@@ -33,6 +34,14 @@ public class Persoon{
         } else {
             System.out.println("U heeft geen uurloon");
         }
+    }
+
+    public Integer getUniqueIDpersoon() {
+        return uniqueIDpersoon;
+    }
+
+    public void setUniqueIDpersoon(Integer uniqueIDpersoon) {
+        this.uniqueIDpersoon = uniqueIDpersoon;
     }
 
     public String getVoorNaam() {

@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+
 public class Bibliotheek {
     private Integer bibliotheekID;
     private String naam;
@@ -23,12 +24,17 @@ public class Bibliotheek {
         this.stad = stad;
         this.gangPaden = new ArrayList<>();
         this.bibliotheekID = bibliotheekIDmaker();
+        //Wordt toegevoegd aan Lijsten.bieblijst
         Lijsten.getBiebLijst().add(this);
     }
 
     public int bibliotheekIDmaker() {
         bibliotheekIDmaker++;
         return bibliotheekIDmaker;
+    }
+
+    public void voegKassaToe(Kassa kas){
+        kassas.add(kas);
     }
 
     public ArrayList<GangPad> getGangPaden() {
@@ -61,17 +67,17 @@ public class Bibliotheek {
         }
     }
 
-    public boolean checkCat(GangPad el1, Boek el){
+    public boolean checkCat(GangPad el1, Boek el) {
         //checkt voor categorie hetzelfde is als boekCat, of het boek er niet in zit en het max niet geraakt is.
         return el.getCategorie().toLowerCase().equals(el1.getCategorie())
                 && !el1.getBoekenInGangPad().contains(el)
                 && el1.getAantalBoeken() + 1 <= el1.getMaxBoeken();
     }
 
-    public void leenBoek(int klantID, int uniqueID){
-        Klant klant = klantLijst.get(klantID-1);
+    public String leenBoek(int klantID, int uniqueID) {
+        Klant klant = klantLijst.get(klantID - 1);
         //checkt of de klant een boek mag lenen
-        if(checkToegang(klant)) {
+        if (checkToegang(klant)) {
             ArrayList<Boek> boekLijstencopy = new ArrayList<>();
             //checkt voor welk boek de klant wilt lenen
             for (Boek el : boekLijst) {
@@ -85,21 +91,24 @@ public class Bibliotheek {
                 }
             }
             setBoekLijst(boekLijstencopy);
+            return "Boek geleend";
+        } else {
+            return "Te veel boeken in bezit";
         }
     }
 
-    public void leverIn(int klantID, int uniqueID){
-        Klant klant = klantLijst.get(klantID-1);
+    public void leverIn(int klantID, int uniqueID) {
+        Klant klant = klantLijst.get(klantID - 1);
 
-        for(Boek el : klant.getBoekenInBezit()){
-            if(el.getUniqueID().equals(uniqueID)){
+        for (Boek el : klant.getBoekenInBezit()) {
+            if (el.getUniqueID().equals(uniqueID)) {
                 klant.getBoekenInBezit().remove(el);
                 boekLijst.add(el);
             }
         }
     }
 
-    public boolean checkToegang(Klant klant){
+    public boolean checkToegang(Klant klant) {
         return !(klant.getBoeteAantal() >= 10.0) && klant.getBoekenInBezit().size() <= 2;
     }
 

@@ -1,4 +1,3 @@
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -7,22 +6,34 @@ public class Klant extends Persoon {
     private Integer uniqueID;
     private Double boeteAantal;
     private Bibliotheek bieb;
+    private Double korting;
 
     private static Integer makeUniqueID = 0;
 
-    public Klant(Integer id, String voorNaam, String achterNaam, String postCode, Double geld) {
+    public Klant(Integer id, String voorNaam, String achterNaam, String postCode, Double geld, Double korting) {
         super(voorNaam, achterNaam, postCode, geld);
-        this.boeteAantal = 0.0;
         uniqueID = makeUniqueID();
+        this.boeteAantal = 0.0;
         bieb = Lijsten.getBiebLijst().get(id-1);
         bieb.getKlantLijst().add(this);
+        super.setUniqueIDpersoon(uniqueID);
+        this.korting = korting;
     }
 
-    public Klant(int id,String voorNaam, String achterNaam, String postCode, Double geld, Double boeteAantal, ArrayList<Boek> boekenInBezit) {
+    public Klant(Integer id,String voorNaam, String achterNaam, String postCode, Double geld, Double boeteAantal, ArrayList<Boek> boekenInBezit, Double korting) {
         super(voorNaam, achterNaam, postCode, geld, boekenInBezit);
         this.boeteAantal = boeteAantal;
         bieb = Lijsten.getBiebLijst().get(id-1);
         bieb.getKlantLijst().add(this);
+        super.setUniqueIDpersoon(uniqueID);
+        this.korting = korting;
+    }
+
+    public Klant(String voorNaam, String achterNaam, String postCode, Double geld, Double boeteAantal, ArrayList<Boek> boekenInBezit, Double korting) {
+        super(voorNaam, achterNaam, postCode, geld, boekenInBezit);
+        this.boeteAantal = boeteAantal;
+        super.setUniqueIDpersoon(uniqueID);
+        this.korting = korting;
     }
 
     public Integer makeUniqueID() {
@@ -30,12 +41,13 @@ public class Klant extends Persoon {
         return makeUniqueID;
     }
 
-    public String betaalBoete(){
+    public String betaalBoete(Kassa betaalKassa){
         if(boeteAantal > 0){
             if(getGeld() >= boeteAantal){
                 setGeld(getGeld()-boeteAantal);
                 boeteAantal = 0.0;
                 System.out.println("Je boete is betaald.");
+                bieb.getKassas().get(0).setGeld(getGeld()+boeteAantal);
                 return "Je boete is betaald";
             }else{
                 System.out.println("Je hebt niet genoeg geld op je rekening");
@@ -62,7 +74,7 @@ public class Klant extends Persoon {
 
     public Double berekenBoeteBedrag(int duration){
         if(duration > 12) {
-            return duration * 1.40;
+            return duration * 1.40 * ((100.0-korting)/100);
         }else{
             return 0.0;
         }

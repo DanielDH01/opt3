@@ -5,11 +5,6 @@ public class Kassa {
 
     private static Integer kassaIDmaker = 0;
 
-    public Kassa(Double geld) {
-        this.geld = geld;
-        this.kassaID = kassaIDmaker();
-    }
-
     public Kassa(int geld) {
         this.geld =(double) geld;
         this.kassaID = kassaIDmaker();
@@ -18,5 +13,21 @@ public class Kassa {
     public int kassaIDmaker() {
         kassaIDmaker++;
         return kassaIDmaker;
+    }
+
+    public Integer getKassaID() {
+        return kassaID;
+    }
+
+    public void setKassaID(Integer kassaID) {
+        this.kassaID = kassaID;
+    }
+
+    public Double getGeld() {
+        return geld;
+    }
+
+    public void setGeld(Double geld) {
+        this.geld = geld;
     }
 }
