@@ -74,7 +74,7 @@ public class Klant extends Persoon {
 
     public Double berekenBoeteBedrag(int duration){
         if(duration > 12) {
-            return duration * 1.40 * ((100.0-korting)/100);
+            return (duration-12) * 1.40 * ((100.0-korting)/100);
         }else{
             return 0.0;
         }

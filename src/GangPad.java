@@ -2,24 +2,39 @@ import java.util.ArrayList;
 
 public class GangPad{
     private Integer gangID;
-    private Integer aantalBoeken;
     private String categorie;
     private Integer maxBoeken;
     private ArrayList<Boek> boekenInGangPad;
 
     public static Integer gangIDmaker = 0;
 
-    public GangPad(String categorie, Integer maxBoeken) {
+    public GangPad(Bibliotheek bieb,String categorie, Integer maxBoeken) {
         this.maxBoeken = maxBoeken;
-        this.aantalBoeken = 0;
         this.categorie = categorie;
         this.gangID = gangIDmaker();
         boekenInGangPad = new ArrayList<>();
+        bieb.getGangPaden().add(this);
     }
 
     public int gangIDmaker(){
         gangIDmaker++;
         return gangIDmaker;
+    }
+
+    public String voegBoekToe(Boek boekie){
+        if(checkBoekToevoegen(boekie)) {
+            boekenInGangPad.add(boekie);
+            return "Boek: "+ boekie.getTitel() + " Toegevoegd";
+        }else{
+            return "Boek: " + boekie.getTitel() + " Kon niet toegevoegd worden. GangPad te klein\n" +
+                    " of je categorie klopt niet";
+
+        }
+    }
+
+    public boolean checkBoekToevoegen(Boek boekie){
+        return getAantalBoeken() + 1 <= maxBoeken &&
+                boekie.getCategorie().toLowerCase().equals(categorie.toLowerCase());
     }
 
     public String getCategorie() {
@@ -35,11 +50,7 @@ public class GangPad{
     }
 
     public Integer getAantalBoeken() {
-        return aantalBoeken;
-    }
-
-    public void setAantalBoeken(Integer aantalBoeken) {
-        this.aantalBoeken = aantalBoeken;
+        return boekenInGangPad.size();
     }
 
     public Integer getMaxBoeken() {
@@ -62,7 +73,7 @@ public class GangPad{
     public String toString() {
         return "GangPad{" +
                 "gangID=" + gangID +
-                ", aantalBoeken=" + aantalBoeken +
+                ", aantalBoeken=" + getAantalBoeken() +
                 ", categorie='" + categorie + '\'' +
                 ", maxBoeken=" + maxBoeken +
                 '}';

@@ -13,13 +13,12 @@ public class Boek {
 
     private static Integer makeUniqueID = 0;
 
-    public Boek(int id, String titel, Integer paginas, String auteur, String categorie) {
+    public Boek(Bibliotheek bieb, String titel, Integer paginas, String auteur, String categorie) {
         this.titel = titel;
         this.paginas = paginas;
         this.auteur = auteur;
         this.categorie = categorie;
         this.uniqueID = makeUniqueID();
-        bieb = Lijsten.getBiebLijst().get(id-1);
         bieb.getBoekLijst().add(this);
     }
 
