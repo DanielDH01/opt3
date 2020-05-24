@@ -94,6 +94,15 @@ public class Bibliotheek {
         }
     }
 
+    public boolean checkToegang(Klant klant) {
+        //als senior mag je 6 boeken lenen en als student 12
+        return !(klant.getBoeteAantal() >= 10.0)
+                && klant.getBoekenInBezit().size() <= klant.getMaxBoekenLeen()
+                && klant.getGeld() >= 0
+                && klantLijst.contains(klant)
+                && Lijsten.getBiebLijst().contains(this);
+    }
+
     public void leverIn(int klantID, int uniqueID) {
         Klant klant = klantLijst.get(klantID - 1);
 
@@ -103,10 +112,6 @@ public class Bibliotheek {
                 boekLijst.add(el);
             }
         }
-    }
-
-    public boolean checkToegang(Klant klant) {
-        return !(klant.getBoeteAantal() >= 10.0) && klant.getBoekenInBezit().size() <= 2;
     }
 
     public ArrayList<Klant> getKlantLijst() {

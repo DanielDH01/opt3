@@ -87,6 +87,7 @@ public class Klant extends Persoon {
     }
 
     public Double getBoeteAantal() {
+        berekenBoete();
         return boeteAantal;
     }
 
@@ -96,6 +97,10 @@ public class Klant extends Persoon {
 
     public Double getKorting(){
         return korting.korting();
+    }
+
+    public Integer getMaxBoekenLeen(){
+        return korting.maxBoekenLeen();
     }
 
     @Override
