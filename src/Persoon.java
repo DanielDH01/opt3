@@ -28,7 +28,7 @@ public class Persoon {
     }
 
     public String werk(Double uurGewerkt) {
-        //Design smell voorkomen:
+        //Design smell voorkomen: duplicate code
         //eerst gekeken of uurgewerkt > 0 zodat ik niet 2x hetzelfde hoef te checken
         if (uurGewerkt <= 0) {
             return "U heeft niet meer dan 0 uur gewerkt dus geen loon ontvangen";

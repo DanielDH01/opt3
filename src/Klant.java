@@ -44,10 +44,7 @@ public class Klant extends Persoon {
     public String betaalBoete(Kassa betaalKassa){
         if(boeteAantal > 0){
             if(getGeld() >= boeteAantal){
-                setGeld(getGeld()-boeteAantal);
-                boeteAantal = 0.0;
-                System.out.println("Je boete is betaald.");
-                bieb.getKassas().get(0).setGeld(getGeld()+boeteAantal);
+                boeteBetaald();
                 return "Je boete is betaald";
             }else{
                 System.out.println("Je hebt niet genoeg geld op je rekening");
@@ -57,6 +54,14 @@ public class Klant extends Persoon {
             System.out.println("Boete aantal is al 0");
             return "Boete aantal is al 0";
         }
+    }
+
+    public void boeteBetaald(){
+        //long method voorkomen
+        setGeld(getGeld()-boeteAantal);
+        boeteAantal = 0.0;
+        System.out.println("Je boete is betaald.");
+        bieb.getKassas().get(0).setGeld(getGeld()+boeteAantal);
     }
 
     public void berekenBoete(){
@@ -71,6 +76,7 @@ public class Klant extends Persoon {
     }
 
     public Double berekenBoeteBedrag(int duration){
+        //long method voorkomen
         if(duration > 12) {
             return (duration-12) * 1.40 * ((100.0-getKorting())/100);
         }else{

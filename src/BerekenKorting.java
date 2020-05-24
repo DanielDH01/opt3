@@ -1,5 +1,5 @@
 public interface BerekenKorting {
-
+    //hiermee voorkom ik duplicate code
     Double korting();
 
     Integer maxBoekenLeen();
