@@ -21,6 +21,17 @@ public class GangPad{
         return gangIDmaker;
     }
 
+    public String voegBoekToe(Boek boekie){
+        if(checkBoekToevoegen(boekie)) {
+            boekenInGangPad.add(boekie);
+            return "Boek: "+ boekie.getTitel() + " Toegevoegd";
+        }else{
+            return "Boek: " + boekie.getTitel() + " Kon niet toegevoegd worden. GangPad te klein\n" +
+                    " of je categorie klopt niet";
+
+        }
+    }
+
     public boolean checkBoekToevoegen(Boek boekie){
         return getAantalBoeken() + 1 <= maxBoeken &&
                 boekie.getCategorie().toLowerCase().equals(categorie.toLowerCase());
