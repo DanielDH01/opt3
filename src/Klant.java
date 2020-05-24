@@ -6,34 +6,32 @@ public class Klant extends Persoon {
     private Integer uniqueID;
     private Double boeteAantal;
     private Bibliotheek bieb;
-    private Double korting;
+
+    public BerekenKorting korting;
 
     private static Integer makeUniqueID = 0;
 
-    public Klant(Integer id, String voorNaam, String achterNaam, String postCode, Double geld, Double korting) {
+    public Klant(Integer id, String voorNaam, String achterNaam, String postCode, Double geld) {
         super(voorNaam, achterNaam, postCode, geld);
         uniqueID = makeUniqueID();
         this.boeteAantal = 0.0;
         bieb = Lijsten.getBiebLijst().get(id-1);
         bieb.getKlantLijst().add(this);
         super.setUniqueIDpersoon(uniqueID);
-        this.korting = korting;
     }
 
-    public Klant(Integer id,String voorNaam, String achterNaam, String postCode, Double geld, Double boeteAantal, ArrayList<Boek> boekenInBezit, Double korting) {
+    public Klant(Integer id,String voorNaam, String achterNaam, String postCode, Double geld, Double boeteAantal, ArrayList<Boek> boekenInBezit) {
         super(voorNaam, achterNaam, postCode, geld, boekenInBezit);
         this.boeteAantal = boeteAantal;
         bieb = Lijsten.getBiebLijst().get(id-1);
         bieb.getKlantLijst().add(this);
         super.setUniqueIDpersoon(uniqueID);
-        this.korting = korting;
     }
 
-    public Klant(String voorNaam, String achterNaam, String postCode, Double geld, Double boeteAantal, ArrayList<Boek> boekenInBezit, Double korting) {
+    public Klant(String voorNaam, String achterNaam, String postCode, Double geld, Double boeteAantal, ArrayList<Boek> boekenInBezit) {
         super(voorNaam, achterNaam, postCode, geld, boekenInBezit);
         this.boeteAantal = boeteAantal;
         super.setUniqueIDpersoon(uniqueID);
-        this.korting = korting;
     }
 
     public Integer makeUniqueID() {
@@ -72,7 +70,7 @@ public class Klant extends Persoon {
 
     public Double berekenBoeteBedrag(int duration){
         if(duration > 12) {
-            return (duration-12) * 1.40 * ((100.0-korting)/100);
+            return (duration-12) * 1.40 * ((100.0-getKorting())/100);
         }else{
             return 0.0;
         }
@@ -92,6 +90,10 @@ public class Klant extends Persoon {
 
     public void setBoeteAantal(Double boeteAantal) {
         this.boeteAantal = boeteAantal;
+    }
+
+    public Double getKorting(){
+        return korting.korting();
     }
 
     @Override

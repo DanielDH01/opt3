@@ -5,18 +5,21 @@ public class Student extends Klant{
 
 
     public Student(Integer studentNummer,Integer id, String voorNaam, String achterNaam, String postCode, Double geld) {
-        super(id, voorNaam, achterNaam, postCode, geld,10.0);
+        super(id, voorNaam, achterNaam, postCode, geld);
         this.studentNummer = studentNummer;
+        korting = new StudentenKorting();
     }
 
     public Student(Integer studentNummer,Integer id, String voorNaam, String achterNaam, String postCode, Double geld, Double boeteAantal, ArrayList<Boek> boekenInBezit) {
-        super(id, voorNaam, achterNaam, postCode, geld, boeteAantal, boekenInBezit,10.0);
+        super(id, voorNaam, achterNaam, postCode, geld, boeteAantal, boekenInBezit);
         this.studentNummer = studentNummer;
+        korting = new StudentenKorting();
     }
 
     public Student(Integer studentNummer,String voorNaam, String achterNaam, String postCode, Double geld, Double boeteAantal, ArrayList<Boek> boekenInBezit) {
-        super(voorNaam, achterNaam, postCode, geld, boeteAantal, boekenInBezit,10.0);
+        super(voorNaam, achterNaam, postCode, geld, boeteAantal, boekenInBezit);
         this.studentNummer = studentNummer;
+        korting = new StudentenKorting();
     }
 
     public Integer getStudentNummer() {

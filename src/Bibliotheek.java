@@ -69,9 +69,15 @@ public class Bibliotheek {
 
     public boolean checkCat(GangPad el1, Boek el) {
         //checkt voor categorie hetzelfde is als boekCat, of het boek er niet in zit en het max niet geraakt is.
-        return el.getCategorie().toLowerCase().equals(el1.getCategorie().toLowerCase())
-                && !el1.getBoekenInGangPad().contains(el)
-                && el1.getAantalBoeken() + 1 <= el1.getMaxBoeken();
+        //longcode voorkomen door ze op te slaan in variabelen
+        String categorieGangPad = el1.getCategorie().toLowerCase();
+        String categorieBoek = el.getCategorie().toLowerCase();
+        boolean boekInGangPad = el1.getBoekenInGangPad().contains(el);
+        boolean maxBoekenBereikt = el1.getAantalBoeken() + 1 <= el1.getMaxBoeken();
+
+        return categorieGangPad.equals(categorieBoek)
+                && !boekInGangPad
+                && maxBoekenBereikt;
     }
 
     public String leenBoek(int klantID, int uniqueID) {

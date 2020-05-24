@@ -24,10 +24,11 @@ public class Lijsten {
     }
 
     public static String naarString() {
-        String string = "BiebLijst: ";
-        for(Bibliotheek el : biebLijst){
-            string += "\n" + " - " + el.getNaam();
-        }
+        if(biebLijst != null) {
+            String string = "BiebLijst: ";
+            for (Bibliotheek el : biebLijst) {
+                string += "\n" + " - " + el.getNaam();
+            }
 //        for (Boek el : boekenLijst) {
 //            string += "\n" + " - " + el.toString();
 //        }
@@ -35,6 +36,8 @@ public class Lijsten {
 //        for (Klant el : klantLijst) {
 //            string += "\n" + " - " + el.toString();
 //        }
-        return string;
+            return string;
+        }
+        return "Geen bibliotheken gevonden";
     }
 }

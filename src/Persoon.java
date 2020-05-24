@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Persoon{
+public class Persoon {
     private Integer uniqueIDpersoon;
     private String voorNaam;
     private String achterNaam;
@@ -27,12 +27,16 @@ public class Persoon{
         this.postCode = postCode;
     }
 
-    public void werk(Double uurGewerkt) {
-        if (uurLoon != null && uurGewerkt > 0) {
+    public String werk(Double uurGewerkt) {
+        //Design smell voorkomen:
+        //eerst gekeken of uurgewerkt > 0 zodat ik niet 2x hetzelfde hoef te checken
+        if (uurGewerkt <= 0) {
+            return "U heeft niet meer dan 0 uur gewerkt dus geen loon ontvangen";
+        } else if (uurLoon != null) {
             geld += uurGewerkt * uurLoon;
-            System.out.println("Uw geldBedrag = " + String.format("%.2f", geld));
+            return "Uw geldBedrag = " + String.format("%.2f", geld);
         } else {
-            System.out.println("U heeft geen uurloon");
+            return "U heeft geen uurloon";
         }
     }
 
