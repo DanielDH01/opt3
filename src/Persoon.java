@@ -11,6 +11,7 @@ public class Persoon {
 
     private ArrayList<Boek> boekenInBezit;
 
+
     public Persoon(String voorNaam, String achterNaam, String postCode, Double geld, ArrayList<Boek> boekenInBezit) {
         this.voorNaam = voorNaam;
         this.achterNaam = achterNaam;
@@ -26,6 +27,7 @@ public class Persoon {
         this.boekenInBezit = new ArrayList<>();
         this.postCode = postCode;
     }
+
 
     public String werk(Double uurGewerkt) {
         //Design smell voorkomen: duplicate code
