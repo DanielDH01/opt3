@@ -28,7 +28,7 @@ public class Persoon{
     }
 
     public void werk(Double uurGewerkt) {
-        if (uurLoon != null) {
+        if (uurLoon != null && uurGewerkt > 0) {
             geld += uurGewerkt * uurLoon;
             System.out.println("Uw geldBedrag = " + String.format("%.2f", geld));
         } else {

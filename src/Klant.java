@@ -65,9 +65,7 @@ public class Klant extends Persoon {
         for(Boek el: getBoekenInBezit()){
             int duration = (int) ChronoUnit.DAYS.between(el.getUitgeleendDatum(), now);
             System.out.println("Boek: " + el.getTitel() + " is " + duration + " dagen uitgeleend.");
-            if(duration > 12) {
-                boete  += berekenBoeteBedrag(duration);
-            }
+            boete  += berekenBoeteBedrag(duration);
         }
         boeteAantal = boete;
     }

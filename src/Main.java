@@ -9,7 +9,7 @@ public class Main {
         Normaal klant1 = new Normaal(deVliet.getBibliotheekID(),"Daniel", "den Heijer", "2728PA", 200.0);
 
         deVliet.getBoekLijst().add(new Boek(deVliet,"appel", 300,"frankie","Actie"));
-        Lijsten.getBiebLijst().get(0).getBoekLijst().add(new Boek(deVliet,"appel2", 300,"frankie2","Humor"));
+        deVliet.getBoekLijst().add(new Boek(deVliet,"appel2", 300,"frankie2","Humor"));
         Lijsten.getBiebLijst().get(0).getBoekLijst().add(new Boek(deVliet,"appel3", 300,"frankie3","drama"));
         Lijsten.getBiebLijst().get(0).getBoekLijst().add(new Boek(deVliet,"appel", 300,"frankie","Actie"));
 
