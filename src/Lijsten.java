@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Lijsten {
     private Lijsten INSTANCE;
-    private static ArrayList<Bibliotheek> biebLijst = new ArrayList<>();
+    private static ArrayList<bieb> biebLijst = new ArrayList<>();
 
     private Lijsten() {
     }
