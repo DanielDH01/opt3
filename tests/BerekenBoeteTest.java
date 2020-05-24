@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 public class BerekenBoeteTest {
     Kassa kassa1 = new Kassa(1000);
-    Bibliotheek testBieb = new Bibliotheek("testBieb", "1234PA", "test", 12, "testStad");
+    Bibliotheek testBieb = new AdresGegevens("testBieb", "1234PA", "test", 12, "testStad");
     Boek testBoek = new Boek(testBieb, "testTitle", 230, "testAuteur", "Actie");
 
     @Test

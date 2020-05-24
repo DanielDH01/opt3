@@ -3,11 +3,6 @@ import java.util.ArrayList;
 
 public class Bibliotheek {
     private Integer bibliotheekID;
-    private String naam;
-    private String postCode;
-    private String straatNaam;
-    private Integer huisNummer;
-    private String stad;
     private ArrayList<GangPad> gangPaden;
     private ArrayList<Kassa> kassas = new ArrayList<>();
     private ArrayList<Klant> klantLijst = new ArrayList<>();
@@ -15,13 +10,8 @@ public class Bibliotheek {
 
     private static Integer bibliotheekIDmaker = 0;
 
-    public Bibliotheek(String naam, String postCode, String straatNaam, Integer huisNummer, String stad) {
+    public Bibliotheek() {
         this.kassas.add(new Kassa(0));
-        this.naam = naam;
-        this.postCode = postCode;
-        this.straatNaam = straatNaam;
-        this.huisNummer = huisNummer;
-        this.stad = stad;
         this.gangPaden = new ArrayList<>();
         this.bibliotheekID = bibliotheekIDmaker();
         //Wordt toegevoegd aan Lijsten.bieblijst
@@ -33,7 +23,7 @@ public class Bibliotheek {
         return bibliotheekIDmaker;
     }
 
-    public void voegKassaToe(Kassa kas){
+    public void voegKassaToe(Kassa kas) {
         kassas.add(kas);
     }
 
@@ -69,6 +59,7 @@ public class Bibliotheek {
 
     public boolean checkCat(GangPad el1, Boek el) {
         //checkt voor categorie hetzelfde is als boekCat, of het boek er niet in zit en het max niet geraakt is.
+
         //longcode voorkomen door ze op te slaan in variabelen
         String categorieGangPad = el1.getCategorie().toLowerCase();
         String categorieBoek = el.getCategorie().toLowerCase();
@@ -118,46 +109,6 @@ public class Bibliotheek {
         return !(klant.getBoeteAantal() >= 10.0) && klant.getBoekenInBezit().size() <= 2;
     }
 
-    public String getNaam() {
-        return naam;
-    }
-
-    public void setNaam(String naam) {
-        this.naam = naam;
-    }
-
-    public String getPostCode() {
-        return postCode;
-    }
-
-    public void setPostCode(String postCode) {
-        this.postCode = postCode;
-    }
-
-    public String getStraatNaam() {
-        return straatNaam;
-    }
-
-    public void setStraatNaam(String straatNaam) {
-        this.straatNaam = straatNaam;
-    }
-
-    public Integer getHuisNummer() {
-        return huisNummer;
-    }
-
-    public void setHuisNummer(Integer huisNummer) {
-        this.huisNummer = huisNummer;
-    }
-
-    public String getStad() {
-        return stad;
-    }
-
-    public void setStad(String stad) {
-        this.stad = stad;
-    }
-
     public ArrayList<Klant> getKlantLijst() {
         return klantLijst;
     }
@@ -180,5 +131,41 @@ public class Bibliotheek {
 
     public void setBibliotheekID(Integer bibliotheekID) {
         this.bibliotheekID = bibliotheekID;
+    }
+
+    public String getNaam() {
+        return null;
+    }
+
+    public void setNaam(String naam) {
+    }
+
+    public String getPostCode() {
+        return null;
+    }
+
+    public void setPostCode(String postCode) {
+    }
+
+    public String getStraatNaam() {
+
+        return null;
+    }
+
+    public void setStraatNaam(String straatNaam) {
+    }
+
+    public Integer getHuisNummer() {
+        return null;
+    }
+
+    public void setHuisNummer(Integer huisNummer) {
+    }
+
+    public String getStad() {
+        return null;
+    }
+
+    public void setStad(String stad) {
     }
 }

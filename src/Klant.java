@@ -3,6 +3,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class Klant extends Persoon {
+    //Long parameter code smell verwijderd door te extenden naar persoon.
+    //Hier zitten namelijk de parameters van voornaam en achternaam en adres enzo in
     private Integer uniqueID;
     private Double boeteAantal;
     private Bibliotheek bieb;

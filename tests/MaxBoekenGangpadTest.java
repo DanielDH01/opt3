@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 //Modified condition/decision coverage
 public class MaxBoekenGangpadTest {
-    Bibliotheek testBieb = new Bibliotheek("testBieb", "1234PA", "test", 12, "testStad");
+    Bibliotheek testBieb = new AdresGegevens("testBieb", "1234PA", "test", 12, "testStad");
     GangPad gangpadActie = new GangPad(testBieb,"Actie",120);
     GangPad gangpadDrama = new GangPad(testBieb,"Drama",120);
 

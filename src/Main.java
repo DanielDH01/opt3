@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Bibliotheek deVliet = new Bibliotheek("de vliet","2728pa","vliet", 30,"Rijswijk");
+        Bibliotheek deVliet = new AdresGegevens("de vliet","2728pa","vliet", 30,"Rijswijk");
+
 
         deVliet.getGangPaden().add(new GangPad(deVliet,"actie",500));
 

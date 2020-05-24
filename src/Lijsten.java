@@ -27,7 +27,9 @@ public class Lijsten {
         if(biebLijst != null) {
             String string = "BiebLijst: ";
             for (Bibliotheek el : biebLijst) {
-                string += "\n" + " - " + el.getNaam();
+                if(el.getNaam() != null) {
+                    string += "\n" + " - " + el.getNaam();
+                }
             }
 //        for (Boek el : boekenLijst) {
 //            string += "\n" + " - " + el.toString();

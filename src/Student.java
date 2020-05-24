@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class Student extends Klant{
     private Integer studentNummer;
 
-
     public Student(Integer studentNummer,Integer id, String voorNaam, String achterNaam, String postCode, Double geld) {
         super(id, voorNaam, achterNaam, postCode, geld);
         this.studentNummer = studentNummer;

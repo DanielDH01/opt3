@@ -4,7 +4,7 @@ import static junit.framework.TestCase.assertEquals;
 
 public class BetaalBoeteTest {
     Kassa kassa1 = new Kassa(1000);
-    Bibliotheek testBieb = new Bibliotheek("testBieb", "1234PA","test",12,"testStad");
+    Bibliotheek testBieb = new AdresGegevens("testBieb", "1234PA","test",12,"testStad");
 
     @Test
     void test1(){
