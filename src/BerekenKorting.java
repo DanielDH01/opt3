@@ -1,5 +1,5 @@
 public interface BerekenKorting {
-    //hiermee voorkom ik duplicate code
+
     Double korting();
 
     Integer maxBoekenLeen();
@@ -15,7 +15,7 @@ class StudentenKorting implements BerekenKorting{
 
     @Override
     public Integer maxBoekenLeen() {
-        return 10;
+        return 12;
     }
 }
 
