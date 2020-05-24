@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>4</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>400</x>
-      <y>344</y>
-      <w>264</w>
-      <h>152</h>
+      <x>402</x>
+      <y>516</y>
+      <w>396</w>
+      <h>228</h>
     </coordinates>
     <panel_attributes>Bibliotheek
 --
@@ -36,10 +36,10 @@ _-bibliotheekIDmaker : Integer = 0
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>132</x>
-      <y>372</y>
-      <w>136</w>
-      <h>56</h>
+      <x>0</x>
+      <y>558</y>
+      <w>204</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Lijsten
 --
@@ -55,10 +55,10 @@ _+naarString() : String_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>184</x>
-      <y>404</y>
-      <w>148</w>
-      <h>72</h>
+      <x>78</x>
+      <y>606</y>
+      <w>222</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;instanceOf&gt;&gt;</panel_attributes>
@@ -67,10 +67,10 @@ _+naarString() : String_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>264</x>
-      <y>384</y>
-      <w>144</w>
-      <h>16</h>
+      <x>198</x>
+      <y>576</y>
+      <w>216</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 -biebLijst</panel_attributes>
@@ -79,10 +79,10 @@ _+naarString() : String_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>612</x>
-      <y>228</y>
-      <w>76</w>
-      <h>48</h>
+      <x>720</x>
+      <y>342</y>
+      <w>114</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Kassa
 --
@@ -97,10 +97,10 @@ _-kassaIDmaker : Integer = 0_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>528</x>
-      <y>240</y>
-      <w>92</w>
-      <h>112</h>
+      <x>594</x>
+      <y>360</y>
+      <w>138</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 -kassas</panel_attributes>
@@ -109,10 +109,10 @@ _-kassaIDmaker : Integer = 0_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>248</x>
-      <y>544</y>
-      <w>140</w>
-      <h>76</h>
+      <x>174</x>
+      <y>816</y>
+      <w>210</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>GangPad
 --
@@ -131,10 +131,10 @@ _-gangIDmaker : Integer = 0_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>308</x>
-      <y>476</y>
-      <w>100</w>
-      <h>76</h>
+      <x>264</x>
+      <y>714</y>
+      <w>150</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1= *
@@ -145,10 +145,10 @@ m1= *
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>460</x>
-      <y>544</y>
-      <w>200</w>
-      <h>92</h>
+      <x>492</x>
+      <y>816</y>
+      <w>300</w>
+      <h>138</h>
     </coordinates>
     <panel_attributes>Boek
 --
@@ -170,10 +170,10 @@ _-makeUniqueID : Integer = 0_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>384</x>
-      <y>576</y>
-      <w>84</w>
-      <h>20</h>
+      <x>378</x>
+      <y>864</y>
+      <w>126</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1= *
@@ -183,10 +183,10 @@ m1= *
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>604</x>
-      <y>492</y>
-      <w>36</w>
-      <h>60</h>
+      <x>708</x>
+      <y>738</y>
+      <w>54</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*
@@ -196,10 +196,10 @@ m1=*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>540</x>
-      <y>492</y>
-      <w>24</w>
-      <h>60</h>
+      <x>612</x>
+      <y>738</y>
+      <w>36</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
@@ -209,10 +209,10 @@ m1=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>656</x>
-      <y>584</y>
-      <w>232</w>
-      <h>20</h>
+      <x>786</x>
+      <y>876</y>
+      <w>348</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*
@@ -222,10 +222,10 @@ m1=*
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>880</x>
-      <y>552</y>
-      <w>200</w>
-      <h>80</h>
+      <x>1122</x>
+      <y>828</y>
+      <w>300</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>Persoon
 --
@@ -245,18 +245,18 @@ m1=*
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1136</x>
-      <y>336</y>
-      <w>420</w>
-      <h>100</h>
+      <x>1506</x>
+      <y>504</y>
+      <w>630</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>Klant
 --
 -uniqueID : Integer
 -boeteAantal : Double
 -bieb : Bibliotheek
--korting : Double
-_makeUniqueID : Integer = 0_
++korting : BerekenKorting
+_-makeUniqueID : Integer = 0_
 --
 +Klant(id : Integer, voorNaam : String, achterNaam : String, postCode : String, geld : Double, korting : Double)
 +Klant(id : Integer, voorNaam : String, achterNaam : String, postCode : String, geld : Double, boeteAantal : Double, boekenInBezit : java.util.ArrayList&lt;Boek&gt;, korting)
@@ -265,16 +265,17 @@ _makeUniqueID : Integer = 0_
 +berekenBoete() : void
 +berekenBoeteBedrag(duration : int) : Double
 +toString() : String
++getKorting() : Double
 +betaalBoete(betaalKassa)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1100</x>
-      <y>224</y>
-      <w>476</w>
-      <h>40</h>
+      <x>1452</x>
+      <y>336</y>
+      <w>714</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>Student
 --
@@ -288,10 +289,10 @@ _makeUniqueID : Integer = 0_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1628</x>
-      <y>376</y>
-      <w>464</w>
-      <h>40</h>
+      <x>2244</x>
+      <y>564</y>
+      <w>696</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>Senior
 --
@@ -305,10 +306,10 @@ _makeUniqueID : Integer = 0_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>536</x>
+      <x>606</x>
       <y>0</y>
-      <w>76</w>
-      <h>12</h>
+      <w>114</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
@@ -316,10 +317,10 @@ _makeUniqueID : Integer = 0_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1336</x>
-      <y>260</y>
-      <w>12</w>
-      <h>84</h>
+      <x>1806</x>
+      <y>390</y>
+      <w>18</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
@@ -327,10 +328,10 @@ _makeUniqueID : Integer = 0_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1088</x>
-      <y>476</y>
-      <w>476</w>
-      <h>40</h>
+      <x>1434</x>
+      <y>714</y>
+      <w>714</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>Normaal
 --
@@ -342,21 +343,21 @@ _makeUniqueID : Integer = 0_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1328</x>
-      <y>432</y>
-      <w>12</w>
-      <h>52</h>
+      <x>1794</x>
+      <y>654</y>
+      <w>18</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1552</x>
-      <y>400</y>
-      <w>84</w>
-      <h>12</h>
+      <x>2130</x>
+      <y>600</y>
+      <w>126</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
@@ -364,10 +365,10 @@ _makeUniqueID : Integer = 0_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>948</x>
-      <y>416</y>
-      <w>196</w>
-      <h>144</h>
+      <x>1224</x>
+      <y>624</y>
+      <w>294</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;340.0;10.0;10.0;470.0;10.0</additional_attributes>
@@ -375,10 +376,10 @@ _makeUniqueID : Integer = 0_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>660</x>
-      <y>380</y>
-      <w>484</w>
-      <h>20</h>
+      <x>792</x>
+      <y>570</y>
+      <w>726</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*
@@ -388,14 +389,113 @@ m1=*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>660</x>
-      <y>392</y>
-      <w>484</w>
-      <h>20</h>
+      <x>792</x>
+      <y>588</y>
+      <w>726</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 -bieb</panel_attributes>
     <additional_attributes>10.0;20.0;1190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1278</x>
+      <y>492</y>
+      <w>126</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+BerekenKorting
+--
++korting() : Double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1302</x>
+      <y>366</y>
+      <w>84</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>NormaalKorting
+--
++korting() : Double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1332</x>
+      <y>390</y>
+      <w>18</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1128</x>
+      <y>498</y>
+      <w>84</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>SeniorenKorting
+--
++korting() : Double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1206</x>
+      <y>510</y>
+      <w>84</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1164</x>
+      <y>402</y>
+      <w>84</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>StudentenKorting
+--
++korting() : Double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1242</x>
+      <y>414</y>
+      <w>78</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>110.0;130.0;110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1398</x>
+      <y>510</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
++korting</panel_attributes>
+    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
   </element>
 </diagram>
